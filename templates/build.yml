@@ -1,0 +1,16 @@
+spec:
+  inputs:
+    stage:
+      type: string
+      default: docker
+
+    job_name:
+      type: string
+      default: docker
+
+---
+
+$[[ inputs.job_name ]]:
+  stage: $[[ inputs.stage ]]
+  script:
+    - echo "$[[ inputs.stage ]]"
